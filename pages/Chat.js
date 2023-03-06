@@ -4,6 +4,8 @@ import { auth } from "@/firebase";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useRouter } from "next/router";
 import ChatRoom from "@/components/ChatRoom";
+import Logout from "@/components/Logout";
+import Welcome from "@/components/Welcome";
 
 const Chat = () => {
   const [user] = useAuthState(auth);
@@ -41,35 +43,35 @@ const Chat = () => {
 
 export default Chat;
 
-function Logout() {
-  const router = useRouter();
+// function Logout() {
+//   const router = useRouter();
 
-  const [user] = useAuthState(auth);
-  const currentUser = [user][0];
+//   const [user] = useAuthState(auth);
+//   const currentUser = [user][0];
 
-  return (
-    auth.currentUser && (
-      <button
-        className="text-green underline hover:text-slate-300 "
-        onClick={() => {
-          auth.signOut();
-          router.push("/");
-        }}
-      >
-        Sign Out
-      </button>
-    )
-  );
-}
+//   return (
+//     auth.currentUser && (
+//       <button
+//         className="text-green underline hover:text-slate-300 "
+//         onClick={() => {
+//           auth.signOut();
+//           router.push("/");
+//         }}
+//       >
+//         Sign Out
+//       </button>
+//     )
+//   );
+// }
 
-function Welcome() {
-  const [user] = useAuthState(auth);
-  // console.log(auth.currentUser)
-  let username = auth.currentUser.displayName.split(" ")[0];
+// function Welcome() {
+//   const [user] = useAuthState(auth);
+//   // console.log(auth.currentUser)
+//   let username = auth.currentUser.displayName.split(" ")[0];
 
-  return (
-    auth.currentUser && (
-      <h3 className="text-slate-300 bg-sidebar ">{`Welcome to ShackChat, ${username}`}</h3>
-    )
-  );
-}
+//   return (
+//     auth.currentUser && (
+//       <h3 className="text-slate-300 bg-sidebar ">{`Welcome to ShackChat, ${username}`}</h3>
+//     )
+//   );
+// }
