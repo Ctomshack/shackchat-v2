@@ -12,7 +12,7 @@ const Logout = () => {
     return (
       auth.currentUser && (
         <button
-          className="text-green border border-green rounded-md py-2 px-4 hover:text-slate-300 hover:border-slate-300"
+          className="text-green border flex-initial border-green rounded-md py-1 px-2 sm:py-1.5 sm:px-3 text-xs sm:text-sm hover:text-slate-300 hover:border-slate-300"
           onClick={() => {
             auth.signOut();
             router.push("/");

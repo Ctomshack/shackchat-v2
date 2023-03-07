@@ -9,7 +9,7 @@ const Welcome = () => {
   
     return (
       auth.currentUser && (
-        <h3 className="text-slate-300 bg-sidebar ">{`Welcome to ShackChat, ${username}`}</h3>
+        <h3 className="text-slate-300 bg-sidebar text-sm sm:text-base">{`Welcome to ShackChat, ${username}`}</h3>
       )
     );
 }
