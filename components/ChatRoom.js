@@ -22,9 +22,14 @@ firebase.initializeApp({
 const db = firebase.firestore();
 
 const ChatRoom = () => {
+  const messagesPerPage = 12;
   const textValue = useRef();
   const messagesRef = db.collection("messages");
-  const messagesQuery = messagesRef.orderBy("createdAt");
+  const messagesQuery = messagesRef.orderBy("createdAt").limitToLast(messagesPerPage);
+
+  const [numMessagesToShow, setNumMessagesToShow] = useState(
+    messagesPerPage
+  );
 
   const [messages] = useCollectionData(messagesQuery, { idField: "id" });
 
@@ -32,7 +37,7 @@ const ChatRoom = () => {
 
   useEffect(() => {
     textValue.current.scrollIntoView({ behavior: "smooth" });
-  });
+  }, [messages]);
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -53,13 +58,24 @@ const ChatRoom = () => {
     textValue.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  // const handleLoadMoreMessages = () => {
+  //   if (messages && numMessagesToShow >= messagesRef.length) {
+  //     return;
+  //   }
+  //   setNumMessagesToShow(numMessagesToShow + messagesPerPage);
+  //   console.log(numMessagesToShow)
+  // };
+
   return (
     <>
-      <main className="chat-room h-[95vh] overflow-y-scroll px-4 pt-4 pb-6 touch-pan-y">
-        {messages &&
-          messages.map((message) => (
+      <main className="chat-room h-[85vh] overflow-x-hidden overflow-y-scroll px-4 pt-4 pb-6 touch-pan-y">
+      {messages &&
+          messages.slice(0, numMessagesToShow).map((message) => (
             <ChatMessage key={message.createdAt} message={message} />
-          ))}
+            ))}
+            {/* {messages  && (
+              <button className="text-displayName my-4 underline text-sm mx-auto" onClick={handleLoadMoreMessages}>Load more messages...</button>
+            )} */}
 
         <span ref={textValue}></span>
       </main>

@@ -30,6 +30,17 @@ body {
   transition-duration: .3s;
 }
 
+.receivedTitle {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.sentTitle {
+  display: flex;
+  flex-direction: row;
+  color: #19a873;
+}
+
 .chat-room-section {
   overflow: scroll;
 -webkit-overflow-scrolling: touch;
@@ -100,7 +111,7 @@ p {
 }
 .received p {
   background: #1c1a28;
-  color: #CBD5E1;
+  color: #ffff;
   align-self: flex-start;
 }
 
