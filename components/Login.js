@@ -153,15 +153,6 @@ const Login = () => {
 
   return (
     <>
-      {/*
-          This example requires updating your template:
-  
-          ```
-          <html class="h-full bg-white">
-          <body class="h-full">
-          ```
-        */}
-
       <div className="flex min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-md">
           <div className="m-auto bg-green p-3 rounded-full w-[75px] shadow-xl">
@@ -275,33 +266,6 @@ const Login = () => {
                       />
                     </div>
                   </div>
-
-                  {/* <div className="flex items-center justify-between">
-                    <div className="flex items-center">
-                      <input
-                        id="remember-me"
-                        name="remember-me"
-                        type="checkbox"
-                        className="h-4 w-4 rounded border-gray-500 text-google focus:ring-google"
-                      />
-                      <label
-                        htmlFor="remember-me"
-                        className="ml-2 block text-sm text-gray-900"
-                      >
-                        Remember me
-                      </label>
-                    </div>
-
-                    <div className="text-sm">
-                      <div
-                        onClick={forgotPasswordHandler}
-                        className="font-medium text-google hover:text-indigo-500"
-                      >
-                        Forgot your password?
-                      </div>
-                    </div>
-                  </div> */}
-
                   <div>
                     <button
                       type="submit"

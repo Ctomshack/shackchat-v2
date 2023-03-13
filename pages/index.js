@@ -6,6 +6,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import Auth from '@/components/Auth';
 import { Router, useRouter } from 'next/router';
 import ChatApp from '@/components/ChatApp';
+import ChatWithSidebar from '@/components/ChatWithSidebar';
 
 const inter = Inter({ subsets: ['latin'] })
 

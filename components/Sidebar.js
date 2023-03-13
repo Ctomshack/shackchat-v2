@@ -4,8 +4,8 @@ import { AiFillInstagram, AiFillGithub, AiFillLinkedin } from 'react-icons/ai'
 
 const Sidebar = () => {
   return (
-    <div className='flex flex-col md:h-[100vh] md:w-[250px] pt-10'>
-        <div className="sm:mx-auto sm:w-full sm:max-w-md">
+    <div className='flex flex-col md:w-[220px] pt-6 md:border-r md:border-gray-500 bg-input'>
+        <div className="sm:mx-auto mx-auto sm:w-full md:h-full md:w-[220px]">
           <div className="m-auto bg-green p-3 rounded-full w-[75px] shadow-xl">
             <RiChatSmile3Fill size={50} className="text-headerText m-auto" />
           </div>
@@ -24,4 +24,4 @@ const Sidebar = () => {
   )
 }
 
-export default Sidebar
+export default Sidebar 
